@@ -66,11 +66,18 @@ function INSTALL_FONTS() {
 	cd nerd-fonts/
 	git sparse-checkout add patched-fonts/CascadiaCode patched-fonts/FiraCode patched-fonts/FiraMono
 	./install.sh CascadiaCode && ./install.sh FiraCode && ./install.sh FiraMono
-	fc-cache -v
 	cd ..
 	sudo rm -rf nerd-fonts/
+	wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+	unzip Hack*.zip
+	cd $(echo $(ls -d Hack*ttf))/ttf
+	ls -ltr *.ttf | awk '{print $8}' | xargs cp -t ~/.local/share/fonts/
+	cd ../..
+	sudo rm -rf Hack*ttf/
+	fc-cache -v
 
 }
+
 function INSTALL_STARSHIP() {
 
 	sudo dnf makecache --refresh
@@ -85,5 +92,11 @@ function INSTALL_PFETCH() {
 	unzip master.zip
 	sudo install pfetch-master/pfetch /usr/local/bin/
 	ls -l /usr/local/bin/pfetch
+
+}
+function SET_ALIASES() {
+
+	mkdir -p "/home/$USER/.bashrc.d"
+	cp ./aliases.sh "/home/$USER/.bashrc.d"
 
 }
