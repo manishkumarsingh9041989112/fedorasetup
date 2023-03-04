@@ -117,94 +117,94 @@ function INSTALL_SYNTHSHELL() {
 
 function INSTALL_TELEGRAM_FLATPAK() {
 	echobanner "Installing Telegram flatpak"
-	flatpak --system install flathub org.telegram.desktop -y
+	flatpak --user install flathub org.telegram.desktop -y
 	echobanner "Telegram flatpak installed"
 }
 function INSTALL_SIGNAL_FLATPAK() {
 	echobanner "Installing Signal flatpak"
-	flatpak --system install flathub org.signal.Signal -y
+	flatpak --user install flathub org.signal.Signal -y
 	echobanner "Signal flatpak installed"
 }
 function INSTALL_TORBROWSER_FLATPAK() {
 	echobanner "Installing Tor-Browser flatpak"
-	flatpak --system install flathub com.github.micahflee.torbrowser-launcher -y
+	flatpak --user install flathub com.github.micahflee.torbrowser-launcher -y
 	echobanner "Tor-Browser flatpak installed"
 }
 function INSTALL_CELLULOID_FLATPAK() {
 	echobanner "Installing Celluloid flatpak"
-	flatpak --system install flathub io.github.celluloid_player.Celluloid -y
+	flatpak --user install flathub io.github.celluloid_player.Celluloid -y
 	echobanner "Celluloid flatpak installed"
 }
 function INSTALL_BITWARDEN_FLATPAK() {
 	echobanner "Installing bitwarden flatpak"
-	flatpak --system install flathub com.bitwarden.desktop -y
+	flatpak --user install flathub com.bitwarden.desktop -y
 	echobanner "bitwarden flatpak installed"
 }
 function INSTALL_KEEPASSXC_FLATPAK() {
 	echobanner "Installing KeepassXC flatpak"
-	flatpak --system install flathub org.keepassxc.KeePassXC -y
+	flatpak --user install flathub org.keepassxc.KeePassXC -y
 	echobanner "KeepassXC flatpak installed"
 }
 function INSTALL_FOLIATE_FLATPAK() {
 	echobanner "Installing Foliate flatpak"
-	flatpak --system install flathub com.github.johnfactotum.Foliate -y
+	flatpak --user install flathub com.github.johnfactotum.Foliate -y
 	echobanner "Foliate flatpak installed"
 }
 function INSTALL_OKULAR_FLATPAK() {
 	echobanner "Installing Okular flatpak"
-	flatpak --system install flathub org.kde.okular -y
+	flatpak --user install flathub org.kde.okular -y
 	echobanner "Okular flatpak installed"
 }
 function INSTALL_BOOKWORM_FLATPAK() {
 	echobanner "Installing Bookworm flatpak"
-	flatpak --system install flathub com.github.babluboy.bookworm -y
+	flatpak --user install flathub com.github.babluboy.bookworm -y
 	echobanner "Bookworm flatpak installed"
 }
 function INSTALL_CHROMIUM_FLATPAK() {
 	echobanner "Installing Chromium flatpak"
-	flatpak --system install flathub org.chromium.Chromium -y
+	flatpak --user install flathub org.chromium.Chromium -y
 	echobanner "Chromium flatpak installed"
 }
 function INSTALL_KLAVARO_FLATPAK() {
 	echobanner "Installing Klavaro flatpak"
-	flatpak --system install flathub net.sourceforge.Klavaro -y
+	flatpak --user install flathub net.sourceforge.Klavaro -y
 	echobanner "Klavaro flatpak installed"
 }
 function INSTALL_LIBREWOLF_FLATPAK() {
 	echobanner "Installing Librewolf flatpak"
-	flatpak --system install flathub io.gitlab.librewolf-community -y
+	flatpak --user install flathub io.gitlab.librewolf-community -y
 	echobanner "Librewolf flatpak installed"
 }
 function INSTALL_VIDEO_DOWNLOADER_FLATPAK() {
 	echobanner "Installing Video Downloader flatpak"
-	flatpak --system install flathub com.github.unrud.VideoDownloader -y
+	flatpak --user install flathub com.github.unrud.VideoDownloader -y
 	echobanner "Video Downloader flatpak installed"
 }
 function INSTALL_CLAPPER_FLATPAK() {
 	echobanner "Installing Clapper flatpak"
-	flatpak --system install flathub com.github.rafostar.Clapper -y
+	flatpak --user install flathub com.github.rafostar.Clapper -y
 	echobanner "Clapper flatpak installed"
 }
 function INSTALL_VSCODIUM_FLATPAK() {
 	echobanner "Installing VSCodium flatpak"
-	flatpak --system install flathub com.vscodium.codium -y
+	flatpak --user install flathub com.vscodium.codium -y
 	echobanner "VSCodium flatpak installed"
 }
 function INSTALL_OTPCLIENT_FLATPAK() {
 	echobanner "Installing OTPClient flatpak"
-	flatpak --system install flathub com.github.paolostivanin.OTPClient -y
+	flatpak --user install flathub com.github.paolostivanin.OTPClient -y
 	echobanner "OTPClient flatpak installed"
 }
 
 function INSTALL_JOPLIN_FLATPAK() {
 	echobanner "Installing JOPLIN DESKTOP flatpak"
-	flatpak --system install flathub net.cozic.joplin_desktop -y
+	flatpak --user install flathub net.cozic.joplin_desktop -y
 	echobanner "JOPLIN DESKTOP flatpak installed"
 }
 
 function INSTALL_SHORTWAVE_FLATPAK() {
 	echobanner "Installing Shortwave flatpak"
-	flatpak --system install flathub de.haeckerfelix.Shortwave -y
+	flatpak --user install flathub de.haeckerfelix.Shortwave -y
 	echobanner "Shortwave flatpak installed"
 }
 #---------------other software-------------------------------#
