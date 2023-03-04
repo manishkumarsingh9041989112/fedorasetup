@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
-source all_installer_list.sh
+source fedorafunctions.sh
 check_root
 #-----------First part-----------------
 UNINSTALL_WILD
 ADD_FASTESTMIRROR
 ENABLE_3RDPARTY_REPOS
+SET_ALIASES
 ENABLE_FLATHUB
 INSTALL_FONTS
 #INSTALL_STARSHIP
@@ -13,7 +14,7 @@ INSTALL_SYNTHSHELL
 INSTALL_PFETCH
 INSTALL_ST4
 INSTALL_CODIUM
-
+SETUP_GIT_REPOS
 #----------Second part-------------------------
 #-------------Flatpaks and Software-----------#
 INSTALL_NEOVIM

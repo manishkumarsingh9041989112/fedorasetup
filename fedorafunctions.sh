@@ -73,11 +73,11 @@ function INSTALL_FONTS() {
 	cd ..
 	sudo rm -rf nerd-fonts/
 	wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-	unzip Hack*.zip
-	cd $(echo $(ls -d Hack*ttf))/ttf
+	unzip Hack-v3.003-ttf
+	cd Hack-v3.003-ttf/ttf
 	ls -ltr *.ttf | awk '{print $8}' | xargs cp -t ~/.local/share/fonts/
 	cd ../..
-	sudo rm -rf Hack*ttf/
+	sudo rm -rf Hack-v3.003-ttf/
 	fc-cache -v
 
 }
@@ -112,7 +112,14 @@ function INSTALL_SYNTHSHELL() {
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
 	sudo rm "/home/$USER/.config/synth-shell/synth-shell-greeter.sh"
 }
+function SETUP_GIT_REPOS() {
 
+	cd ~/Documents
+	mkdir -p Gitoyen && cd Gitoyen
+	git clone https://github.com/manishkumarsingh9041989112/fedorasetup.git
+	git clone https://github.com/manishkumarsingh9041989112/Ubuntusetup.git
+	cd ~
+}
 #----------------------Flatpaks installed are below-------------------------------------------
 
 function INSTALL_TELEGRAM_FLATPAK() {
