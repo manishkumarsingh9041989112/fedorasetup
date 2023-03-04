@@ -7,7 +7,11 @@ function check_root() {
 		exit 1
 	fi
 }
-
+function echobanner() {
+	echo "+-----------------------------------------------------------------------------------------------------------+"
+	echo " $1 "
+	echo "+-----------------------------------------------------------------------------------------------------------+"
+}
 function ADD_FASTESTMIRROR() {
 
 	echo "max_parallel_downloads=10" | sudo tee -a '/etc/dnf/dnf.conf'
@@ -99,4 +103,162 @@ function SET_ALIASES() {
 	mkdir -p "/home/$USER/.bashrc.d"
 	cp ./aliases.sh "/home/$USER/.bashrc.d"
 
+}
+function INSTALL_SYNTHSHELL() {
+
+	git clone --recursive https://github.com/andresgongora/synth-shell.git
+	chmod +x synth-shell/setup.sh
+	cd synth-shell
+	printf "%s\n" i u Y Y Y Y | ./setup.sh
+	sudo rm "/home/$USER/.config/synth-shell/synth-shell-greeter.sh"
+}
+
+#----------------------Flatpaks installed are below-------------------------------------------
+
+function INSTALL_TELEGRAM_FLATPAK() {
+	echobanner "Installing Telegram flatpak"
+	flatpak --system install flathub org.telegram.desktop -y
+	echobanner "Telegram flatpak installed"
+}
+function INSTALL_SIGNAL_FLATPAK() {
+	echobanner "Installing Signal flatpak"
+	flatpak --system install flathub org.signal.Signal -y
+	echobanner "Signal flatpak installed"
+}
+function INSTALL_TORBROWSER_FLATPAK() {
+	echobanner "Installing Tor-Browser flatpak"
+	flatpak --system install flathub com.github.micahflee.torbrowser-launcher -y
+	echobanner "Tor-Browser flatpak installed"
+}
+function INSTALL_CELLULOID_FLATPAK() {
+	echobanner "Installing Celluloid flatpak"
+	flatpak --system install flathub io.github.celluloid_player.Celluloid -y
+	echobanner "Celluloid flatpak installed"
+}
+function INSTALL_BITWARDEN_FLATPAK() {
+	echobanner "Installing bitwarden flatpak"
+	flatpak --system install flathub com.bitwarden.desktop -y
+	echobanner "bitwarden flatpak installed"
+}
+function INSTALL_KEEPASSXC_FLATPAK() {
+	echobanner "Installing KeepassXC flatpak"
+	flatpak --system install flathub org.keepassxc.KeePassXC -y
+	echobanner "KeepassXC flatpak installed"
+}
+function INSTALL_FOLIATE_FLATPAK() {
+	echobanner "Installing Foliate flatpak"
+	flatpak --system install flathub com.github.johnfactotum.Foliate -y
+	echobanner "Foliate flatpak installed"
+}
+function INSTALL_OKULAR_FLATPAK() {
+	echobanner "Installing Okular flatpak"
+	flatpak --system install flathub org.kde.okular -y
+	echobanner "Okular flatpak installed"
+}
+function INSTALL_BOOKWORM_FLATPAK() {
+	echobanner "Installing Bookworm flatpak"
+	flatpak --system install flathub com.github.babluboy.bookworm -y
+	echobanner "Bookworm flatpak installed"
+}
+function INSTALL_CHROMIUM_FLATPAK() {
+	echobanner "Installing Chromium flatpak"
+	flatpak --system install flathub org.chromium.Chromium -y
+	echobanner "Chromium flatpak installed"
+}
+function INSTALL_KLAVARO_FLATPAK() {
+	echobanner "Installing Klavaro flatpak"
+	flatpak --system install flathub net.sourceforge.Klavaro -y
+	echobanner "Klavaro flatpak installed"
+}
+function INSTALL_LIBREWOLF_FLATPAK() {
+	echobanner "Installing Librewolf flatpak"
+	flatpak --system install flathub io.gitlab.librewolf-community -y
+	echobanner "Librewolf flatpak installed"
+}
+function INSTALL_VIDEO_DOWNLOADER_FLATPAK() {
+	echobanner "Installing Video Downloader flatpak"
+	flatpak --system install flathub com.github.unrud.VideoDownloader -y
+	echobanner "Video Downloader flatpak installed"
+}
+function INSTALL_CLAPPER_FLATPAK() {
+	echobanner "Installing Clapper flatpak"
+	flatpak --system install flathub com.github.rafostar.Clapper -y
+	echobanner "Clapper flatpak installed"
+}
+function INSTALL_VSCODIUM_FLATPAK() {
+	echobanner "Installing VSCodium flatpak"
+	flatpak --system install flathub com.vscodium.codium -y
+	echobanner "VSCodium flatpak installed"
+}
+function INSTALL_OTPCLIENT_FLATPAK() {
+	echobanner "Installing OTPClient flatpak"
+	flatpak --system install flathub com.github.paolostivanin.OTPClient -y
+	echobanner "OTPClient flatpak installed"
+}
+
+function INSTALL_JOPLIN_FLATPAK() {
+	echobanner "Installing JOPLIN DESKTOP flatpak"
+	flatpak --system install flathub net.cozic.joplin_desktop -y
+	echobanner "JOPLIN DESKTOP flatpak installed"
+}
+
+function INSTALL_SHORTWAVE_FLATPAK() {
+	echobanner "Installing Shortwave flatpak"
+	flatpak --system install flathub de.haeckerfelix.Shortwave -y
+	echobanner "Shortwave flatpak installed"
+}
+#---------------other software-------------------------------#
+
+function INSTALL_NEOVIM() {
+
+	echobanner "Neovim download and full install"
+	sudo dnf install neovim -y
+	echobanner "Neovim install completed"
+}
+function INSTALL_VARIETY() {
+
+	echobanner "Variety download and full install"
+	sudo dnf install variety -y
+	echobanner "Variety install completed"
+}
+function INSTALL_REDSHIFT() {
+
+	echobanner "Redshift download and full install"
+	sudo dnf install redshift-gtk -y
+	echobanner "Redshift install completed"
+}
+function INSTALL_QBITTORRENT() {
+
+	echobanner "Qbittorrent download and full install"
+	sudo dnf install qbittorrent -y
+	echobanner "Qbittorrent install completed"
+}
+function INSTALL_MPV() {
+
+	echobanner "MPV download and full install"
+	sudo dnf install mpv -y
+	echobanner "MPV install completed"
+}
+function INSTALL_VLC() {
+
+	echobanner "VLC download and full install"
+	sudo dnf install vlc -y
+	echobanner "VLC install completed"
+}
+function INSTALL_TMUX() {
+
+	echobanner "Tmux download and full install"
+	sudo dnf install tmux -y
+	echobanner "Tmux install completed"
+}
+function INSTALL_CALIBRE() {
+
+	echobanner "Calibre Ebook manager installer"
+	sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+	echobanner "Calibre Ebook manager installer completed"
+}
+function INSTALL_BLEACHBIT {
+	echo "Bleachbit download and full install"
+	sudo dnf install bleachbit -y
+	echo "Bleachbit completed"
 }
