@@ -74,10 +74,10 @@ function INSTALL_FONTS() {
 	sudo rm -rf nerd-fonts/
 	wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
 	unzip Hack-v3.003-ttf
-	cd Hack-v3.003-ttf/ttf
+	cd ttf
 	ls -ltr *.ttf | awk '{print $8}' | xargs cp -t ~/.local/share/fonts/
 	cd ../..
-	sudo rm -rf Hack-v3.003-ttf/
+	sudo rm -rf Hack-v3.003-ttf.zip ttf/
 	fc-cache -v
 
 }
