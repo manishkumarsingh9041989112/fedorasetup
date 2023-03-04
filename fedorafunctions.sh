@@ -207,6 +207,24 @@ function INSTALL_SHORTWAVE_FLATPAK() {
 	flatpak --user install flathub de.haeckerfelix.Shortwave -y
 	echobanner "Shortwave flatpak installed"
 }
+function INSTALL_BRAVEBROWSER_FLATPAK() {
+	echobanner "Installing Brave flatpak"
+	flatpak --user install flathub com.brave.Browser -y
+	echobanner "Brave flatpak installed"
+}
+
+function INSTALL_GOOGLECHROME_FLATPAK() {
+	echobanner "Installing Google Chrome flatpak"
+	flatpak --user install flathub com.google.Chrome -y
+	echobanner "Google Chrome flatpak installed"
+}
+function INSTALL_ONLYOFFICE_FLATPAK() {
+
+	echobanner "Installing Onlyoffice DE flatpak"
+	flatpak --user install flathub org.onlyoffice.desktopeditors -y
+	echobanner "Onlyoffice DE flatpak installed"
+}
+
 #---------------other software-------------------------------#
 
 function INSTALL_NEOVIM() {
