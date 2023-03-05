@@ -75,7 +75,7 @@ function INSTALL_FONTS() {
 	wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
 	unzip Hack-v3.003-ttf
 	cd ttf
-	ls -ltr *.ttf | awk '{print $8}' | xargs cp -t ~/.local/share/fonts/
+	cp *.ttf $HOME/.local/share/fonts/
 	cd ../..
 	sudo rm -rf Hack-v3.003-ttf.zip ttf/
 	fc-cache -v
@@ -86,7 +86,7 @@ function INSTALL_STARSHIP() {
 
 	sudo dnf makecache --refresh
 	sudo dnf -y install starship
-	echo "eval \"\$(starship init bash)\"" | sudo tee -a "/home/$USER/.bashrc" >/dev/null
+	echo "eval \"\$(starship init bash)\"" | sudo tee -a "/$HOME/.bashrc" >/dev/null
 	starship preset pastel-powerline >~/.config/starship.toml
 
 }
@@ -100,8 +100,8 @@ function INSTALL_PFETCH() {
 }
 function SET_ALIASES() {
 
-	mkdir -p "/home/$USER/.bashrc.d"
-	cp ./aliases.sh "/home/$USER/.bashrc.d"
+	mkdir -p "/$HOME/.bashrc.d"
+	cp ./aliases.sh "/$HOME/.bashrc.d"
 
 }
 function INSTALL_SYNTHSHELL() {
@@ -114,11 +114,11 @@ function INSTALL_SYNTHSHELL() {
 }
 function SETUP_GIT_REPOS() {
 
-	cd /home/$USER/Documents
+	cd "/$HOME/Documents"
 	mkdir -p Gitoyen && cd Gitoyen
 	git clone https://github.com/manishkumarsingh9041989112/fedorasetup.git
 	git clone https://github.com/manishkumarsingh9041989112/Ubuntusetup.git
-	cd /home/$USER
+	cd $HOME
 }
 #----------------------Flatpaks installed are below-------------------------------------------
 
