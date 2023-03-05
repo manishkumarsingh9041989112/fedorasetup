@@ -110,7 +110,7 @@ function INSTALL_SYNTHSHELL() {
 	chmod +x synth-shell/setup.sh
 	cd synth-shell
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
-	rm "/home/$USER/.config/synth-shell/synth-shell-greeter.sh"
+	rm "/$HOME/.config/synth-shell/synth-shell-greeter.sh"
 }
 function SETUP_GIT_REPOS() {
 
