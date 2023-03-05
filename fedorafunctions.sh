@@ -110,15 +110,15 @@ function INSTALL_SYNTHSHELL() {
 	chmod +x synth-shell/setup.sh
 	cd synth-shell
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
-	sudo rm "/home/$USER/.config/synth-shell/synth-shell-greeter.sh"
+	rm "/home/$USER/.config/synth-shell/synth-shell-greeter.sh"
 }
 function SETUP_GIT_REPOS() {
 
-	cd ~/Documents
+	cd /home/$USER/Documents
 	mkdir -p Gitoyen && cd Gitoyen
 	git clone https://github.com/manishkumarsingh9041989112/fedorasetup.git
 	git clone https://github.com/manishkumarsingh9041989112/Ubuntusetup.git
-	cd ~
+	cd /home/$USER
 }
 #----------------------Flatpaks installed are below-------------------------------------------
 
