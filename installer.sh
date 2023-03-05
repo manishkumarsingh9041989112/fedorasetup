@@ -2,6 +2,8 @@
 set -e
 source fedorafunctions.sh
 check_root
+default_user=$(logname 2>/dev/null || echo ${SUDO_USER:-${USER}})
+HOME="/home/${default_user}"
 #-----------First part-----------------
 UNINSTALL_WILD
 ADD_FASTESTMIRROR
