@@ -43,7 +43,7 @@ function UPDATE_AND_REBOOT() {
 
 	sudo dnf clean all -y
 	sudo dnf upgrade --refresh -y
-	sudo dnf upgrade -y && sudo flatpak update && sudo shutdown -r 0
+	sudo dnf upgrade -y && sudo flatpak update -y && sudo shutdown -r 0
 
 }
 
@@ -98,6 +98,7 @@ function INSTALL_PFETCH() {
 	unzip master.zip
 	sudo install pfetch-master/pfetch /usr/local/bin/
 	ls -l /usr/local/bin/pfetch
+	echo "pfetch" | sudo tee -a "$HOME/.bashrc"
 
 }
 function SET_ALIASES() {
@@ -113,6 +114,7 @@ function INSTALL_SYNTHSHELL() {
 	cd synth-shell
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
 	rm "$HOME/.config/synth-shell/synth-shell-greeter.sh"
+	echo "pfetch" | sudo tee -a "$HOME/.bashrc"
 }
 function SETUP_GIT_REPOS() {
 
