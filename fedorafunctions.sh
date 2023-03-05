@@ -48,7 +48,9 @@ function UPDATE_AND_REBOOT() {
 }
 
 function UNINSTALL_WILD() {
-	sudo dnf remove transmission-gtk hexchat pidgin libreoffice* -y
+
+	sudo dnf remove transmission-gtk hexchat pidgin rhythmbox libreoffice* -y
+
 }
 function INSTALL_ST4() {
 	sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
@@ -86,7 +88,7 @@ function INSTALL_STARSHIP() {
 
 	sudo dnf makecache --refresh
 	sudo dnf -y install starship
-	echo "eval \"\$(starship init bash)\"" | sudo tee -a "/$HOME/.bashrc" >/dev/null
+	echo "eval \"\$(starship init bash)\"" | sudo tee -a "$HOME/.bashrc" >/dev/null
 	starship preset pastel-powerline >~/.config/starship.toml
 
 }
@@ -100,8 +102,8 @@ function INSTALL_PFETCH() {
 }
 function SET_ALIASES() {
 
-	mkdir -p "/$HOME/.bashrc.d"
-	cp ./aliases.sh "/$HOME/.bashrc.d"
+	mkdir -p "$HOME/.bashrc.d"
+	cp ./aliases.sh "$HOME/.bashrc.d"
 
 }
 function INSTALL_SYNTHSHELL() {
@@ -110,14 +112,16 @@ function INSTALL_SYNTHSHELL() {
 	chmod +x synth-shell/setup.sh
 	cd synth-shell
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
-	rm "/$HOME/.config/synth-shell/synth-shell-greeter.sh"
+	rm "$HOME/.config/synth-shell/synth-shell-greeter.sh"
 }
 function SETUP_GIT_REPOS() {
 
-	cd "/$HOME/Documents"
+	cd "$HOME/Documents"
 	mkdir -p Gitoyen && cd Gitoyen
 	git clone https://github.com/manishkumarsingh9041989112/fedorasetup.git
 	git clone https://github.com/manishkumarsingh9041989112/Ubuntusetup.git
+	git config --global user.name "manishkumarsingh9041989112"
+	git config --global user.email fun.desk0872@fastmail.com
 	cd $HOME
 }
 #----------------------Flatpaks installed are below-------------------------------------------
