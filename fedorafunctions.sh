@@ -51,7 +51,7 @@ function UPDATE_AND_REBOOT() {
 function UNINSTALL_WILD() {
 
 	sudo dnf remove transmission-gtk hexchat pidgin rhythmbox -y
-	sudo dnf remove gnome-photos gnome-contacts gnome-maps gnome-weather gnome-clocks gnome-tour libreoffice* cheese* totem* gnome-boxes -y
+	sudo dnf remove gnome-photos gnome-contacts gnome-maps gnome-weather gnome-clocks gnome-tour libreoffice* cheese* totem gnome-boxes -y
 
 }
 function INSTALL_ST4() {
