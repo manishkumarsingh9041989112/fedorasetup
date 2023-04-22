@@ -129,6 +129,16 @@ function SETUP_GIT_REPOS() {
 	cd $HOME
 	sudo chown -R $USER:$USER $HOME
 }
+function SETUP_FOLDERS() {
+
+	cd "$HOME/Documents"
+	mkdir -p Locker Books Enpass
+	cd Books
+	mkdir -p Computers Miscellany
+	cd $HOME
+	sudo chown -R $USER:$USER $HOME
+
+}
 #----------------------Flatpaks installed are below-------------------------------------------
 
 function INSTALL_TELEGRAM_FLATPAK() {
