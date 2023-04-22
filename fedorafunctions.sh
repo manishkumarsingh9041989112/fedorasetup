@@ -43,6 +43,7 @@ function UPDATE_AND_REBOOT() {
 
 	sudo dnf clean all -y
 	sudo dnf upgrade --refresh -y
+	sudo chown -R $USER:$USER $HOME
 	sudo dnf upgrade -y && sudo flatpak update -y && sudo shutdown -r 0
 
 }
@@ -50,7 +51,7 @@ function UPDATE_AND_REBOOT() {
 function UNINSTALL_WILD() {
 
 	sudo dnf remove transmission-gtk hexchat pidgin rhythmbox -y
-	sudo dnf remove gnome-photos gnome-contacts gnome-maps gnome-weather gnome-clocks gnome-tour libreoffice* cheese* gnome-boxes -y
+	sudo dnf remove gnome-photos gnome-contacts gnome-maps gnome-weather gnome-clocks gnome-tour libreoffice* cheese* totem* gnome-boxes -y
 
 }
 function INSTALL_ST4() {
@@ -106,7 +107,7 @@ function SET_ALIASES() {
 
 	mkdir -p "$HOME/.bashrc.d"
 	cp ./aliases.sh "$HOME/.bashrc.d"
-
+	sudo chown -R $USER:$USER $HOME
 }
 function INSTALL_SYNTHSHELL() {
 
@@ -115,7 +116,7 @@ function INSTALL_SYNTHSHELL() {
 	cd synth-shell
 	printf "%s\n" i u Y Y Y Y | ./setup.sh
 	rm "$HOME/.config/synth-shell/synth-shell-greeter.sh"
-	echo "pfetch" | sudo tee -a "$HOME/.bashrc"
+	sudo chown -R $USER:$USER $HOME
 }
 function SETUP_GIT_REPOS() {
 
@@ -126,6 +127,7 @@ function SETUP_GIT_REPOS() {
 	git config --global user.name "manishkumarsingh9041989112"
 	git config --global user.email fun.desk0872@fastmail.com
 	cd $HOME
+	sudo chown -R $USER:$USER $HOME
 }
 #----------------------Flatpaks installed are below-------------------------------------------
 
